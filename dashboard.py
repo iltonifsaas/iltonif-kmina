@@ -371,9 +371,7 @@ with st.sidebar:
     ''', unsafe_allow_html=True)
     st.markdown("---")
 
-    clientes = get_clientes()
-    cliente_sel = st.selectbox("🏪 Cliente", options=clientes, format_func=lambda x: x.upper())
-    df_raw = cargar_datos(cliente_sel)
+    df_raw = cargar_datos("kmina")
     st.markdown('<div style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#475569;margin-bottom:8px">Filtros</div>', unsafe_allow_html=True)
 
     categorias = ["Todas"] + sorted(df_raw["categoria"].unique().tolist())
